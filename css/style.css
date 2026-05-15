@@ -490,6 +490,10 @@ footer p {
         grid-template-columns: 1fr;
     }
 
+    .sectors-grid {
+        gap: 0;
+    }
+
     .container {
         padding: 0 1rem;
     }
