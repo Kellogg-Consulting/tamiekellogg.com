@@ -1,0 +1,511 @@
+/* ===================================
+   Kellogg Consulting - Main Stylesheet
+   =================================== */
+
+/* CSS Variables for Brand Colors */
+:root {
+    --primary-blue: #2b5a89;
+    --secondary-blue: #4a7ba7;
+    --light-blue: #6fa3d0;
+    --dark-blue: #1a3a5c;
+    --accent-blue: #5b9bd5;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --background-light: #f8f9fa;
+    --white: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-blue);
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand h1 {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin: 0;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-blue);
+    border-bottom-color: var(--primary-blue);
+}
+
+/* Decorative Bar */
+.decorative-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.decorative-bar img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    color: var(--white);
+    padding: 6rem 2rem;
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    border-color: var(--white);
+    color: var(--primary-blue);
+}
+
+.btn-secondary {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-blue);
+}
+
+/* Services Overview (Home Page) */
+.services-overview {
+    padding: 5rem 2rem;
+    padding-top: 0;
+    background-color: var(--white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    padding: 2rem;
+    background-color: var(--background-light);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-blue);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-blue);
+}
+
+.service-card p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.cta-link {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    color: var(--white);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.page-header h2 {
+    color: var(--white);
+}
+
+/* About Content */
+.about-content {
+    padding: 4rem 2rem;
+}
+
+.about-main {
+    margin-bottom: 3rem;
+}
+
+.about-main h3 {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+}
+
+.company-description {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--background-light);
+    border-radius: 8px;
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.testimonial {
+    padding: 2rem;
+    background-color: var(--white);
+    border-left: 4px solid var(--accent-blue);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+}
+
+.testimonial blockquote {
+    margin: 0;
+}
+
+.testimonial p {
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.testimonial cite {
+    color: var(--primary-blue);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Services Detail Page */
+.services-detail {
+    padding: 4rem 2rem;
+}
+
+.intro-text {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--background-light);
+    border-radius: 8px;
+}
+
+.services-detail h3 {
+    color: var(--primary-blue);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.services-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.service-item {
+    padding: 1.5rem;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-blue);
+}
+
+.service-item h4 {
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.service-item p {
+    margin: 0;
+}
+
+.sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.sectors-column {
+    list-style-position: inside;
+    list-style-type: disc;
+}
+
+.sectors-column li {
+    padding: 0.5rem 0;
+    color: var(--text-light);
+}
+
+.rosters-list {
+    list-style-position: inside;
+    list-style-type: disc;
+    margin-bottom: 3rem;
+}
+
+.rosters-list li {
+    padding: 0.5rem 0;
+    color: var(--text-light);
+}
+
+.clients-text {
+    padding: 2rem;
+    background-color: var(--background-light);
+    border-radius: 8px;
+}
+
+.clients-text p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* Contact Page */
+.contact-content {
+    padding: 4rem 2rem;
+}
+
+.contact-section {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.contact-section h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.contact-section h3 a {
+    color: var(--primary-blue);
+    text-decoration: underline;
+}
+
+.contact-section h3 a:hover {
+    color: var(--secondary-blue);
+}
+
+.contact-email {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.contact-email a {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.cta-link {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+footer {
+    background-color: var(--primary-blue);
+    padding: 1rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    color: var(--white);
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 0.7;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .decorative-bar {
+        height: 80px;
+    }
+
+    .hero {
+        padding: 4rem 1rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.125rem;
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+
+    .services-grid,
+    .testimonials,
+    .sectors-grid,
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .decorative-bar {
+        height: 60px;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+    }
+}
